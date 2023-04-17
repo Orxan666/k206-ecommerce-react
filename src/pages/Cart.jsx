@@ -1,8 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Col, Container, Row } from "reactstrap";
-import productImg02 from "../assets/images/double-sofa-02.png";
-import '../styles/cart.scss'
+import "../styles/cart.scss";
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/CommonSection";
 import { cartActions } from "../redux/slices/cartSlice";
@@ -11,7 +10,6 @@ import { motion } from "framer-motion";
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
-  // console.log(cartItems)
   return (
     <Helmet title="Cart">
       <CommonSection title="Shopping Cart" />
@@ -42,12 +40,13 @@ const Cart = () => {
             </Col>
             <Col lg="3">
               <div>
-                <h6 className="d-flex align-items-center justify-content-between">Umumi Qiymet</h6>
+                <h6 className="d-flex align-items-center justify-content-between">
+                  Umumi Qiymet
+                </h6>
                 <span className="fs-4 fw-bold">${totalAmount}</span>
                 <p className="fs-6 mt-2">
-                taxes and shipping will calculate in checkout
-              </p>
-
+                  taxes and shipping will calculate in checkout
+                </p>
               </div>
             </Col>
           </Row>
@@ -63,14 +62,18 @@ const Tr = ({ item }) => {
   const deleteProduct = () => {
     dispatch(cartActions.deleteItem(item.id));
   };
-  console.log(item.imgUrl);
   return (
     <tr>
       <td>
-        <img className="img-fluid" src={item.imgUrl} alt="" />
+        <img
+          className="img-fluid"
+          style={{ width: 50 }}
+          src={item.imgUrl}
+          alt=""
+        />
       </td>
       <td>{item.productName}</td>
-      <td>${item.price}</td>
+      <td>{item.price}</td>
       <td>{item.quantity}</td>
       <td>
         <motion.i
