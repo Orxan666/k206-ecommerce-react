@@ -1,6 +1,5 @@
 import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import Cart from "../pages/Cart";
 import Checkout from "../pages/Checkout";
 import Error from "../pages/Error";
 import Home from "../pages/Home";
@@ -15,7 +14,6 @@ const Routers = () => {
       <Route path="home" element={<Home />} />
       <Route path="shop" element={<Shop />} />
       <Route path="shop/:id" element={<ProductDetails />} />
-      <Route path="cart" element={<Cart />} />
       <Route path="checkout" element={<Checkout />} />
       <Route path="login" element={<Login />} />
       <Route path="signup" element={<Signup />} />

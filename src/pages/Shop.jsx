@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { Col, Container, Row } from "reactstrap";
@@ -93,9 +93,9 @@ const Shop = () => {
                 <ProductList data={productsData} />
               ) : (
                 <SkeletonTheme baseColor="#202020" highlightColor="#444">
-                  <p>
+                  <h1>
                     <Skeleton count={3} />
-                  </p>
+                  </h1>
                 </SkeletonTheme>
               )}
             </Row>

@@ -1,42 +1,34 @@
-
-
-
-import React from 'react'
-import '../../styles/clock.scss'
-import { useState,useEffect } from 'react';
+import React from "react";
+import "../../styles/clock.scss";
+import { useState, useEffect } from "react";
 const Clock = () => {
-    const [days, setDays] = useState();
-    const [hours, setHours] = useState();
-    const [minutes, setMinutes] = useState();
-    const [seconds, setSeconds] = useState();
-    let interval;
-    const countDown = () => {
-      const destination = new Date("April 15,2023").getTime();
-      interval = setInterval(() => {
-        const now = new Date().getTime();
-        const different = destination - now;
-        const days = Math.floor(different / (1000 * 60 * 60 * 24));
-        const hours = Math.floor(
-          (different % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        );
-        const minutes = Math.floor(
-          (different % (1000 * 60 * 60)) / (1000 * 60)
-        );
-        const seconds = Math.floor((different % (1000 * 60)) / 1000);
-        if (different < 0) {
-          clearInterval(interval);
-        } else {
-          setDays(days);
-          setHours(hours);
-          setMinutes(minutes);
-          setSeconds(seconds);
-  
-        }
-      });
-    };
-    useEffect(() => {
-        countDown()
-    },);
+  const [days, setDays] = useState();
+  const [hours, setHours] = useState();
+  const [minutes, setMinutes] = useState();
+  const [seconds, setSeconds] = useState();
+  let interval;
+  const countDown = () => {
+    const destination = new Date("September 25,2024").getTime();
+    interval = setInterval(() => {
+      const now = new Date().getTime();
+      const different = destination - now;
+      const days = Math.floor(different / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((different % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((different % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((different % (1000 * 60)) / 1000);
+      if (different < 0) {
+        clearInterval(interval);
+      } else {
+        setDays(days);
+        setHours(hours);
+        setMinutes(minutes);
+        setSeconds(seconds);
+      }
+    });
+  };
+  useEffect(() => {
+    countDown();
+  });
   return (
     <div className="clock__wrapper d-flex align-items-center gap-3">
       <div className="clock__data d-flex align-items-center gap-3">
@@ -70,4 +62,4 @@ const Clock = () => {
   );
 };
 
-export default Clock
+export default Clock;

@@ -57,7 +57,7 @@ const Header = () => {
                 </div>
               </div>
             </Link>
-            <div className="navigation" ref={menuRef} onClick={menuToggle}>
+            <div className="navigation" ref={menuRef} >
               <ul className="menu">
                 {nav__links.map((item, index) => (
                   <li className="nav__item" key={index}>

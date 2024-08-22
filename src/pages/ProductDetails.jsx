@@ -77,6 +77,7 @@ const ProductDetails = () => {
                     <span onClick={() => setRating(5)}>
                       <i className="ri-star-half-s-line"></i>
                     </span>
+                    
                   </div>
                   <p>
                     (<span>{avgRating} </span>.ratings)

@@ -16,7 +16,7 @@ const Cart = () => {
       <section>
         <Container>
           <Row>
-            <Col lg="9">
+            <Col lg="9" >
               {cartItems.length === 0 ? (
                 <h1>Sebet bosdur</h1>
               ) : (
